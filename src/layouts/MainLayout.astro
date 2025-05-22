@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css';
 import Head from '@components/common/Head.astro';
-import CustomCursor from "../components/visual/CustomCursor";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import CustomCursor from '../components/visual/CustomCursor';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 // Optional: Props wie Titel oder Beschreibung setzen
 const {
@@ -17,7 +17,6 @@ const {
 <html lang="de">
   <head>
     <Head title={title} description={description} url={url} image={image} />
-
   </head>
   <body class="text-gray-800 font-body antialiased">
     <Header client:load />
@@ -25,8 +24,9 @@ const {
       <slot />
     </main>
     <CustomCursor client:only="react" />
-    <Footer client:load/>
+    <Footer client:load />
 
-    <script is:inline defer src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"></script>
+    <script is:inline defer src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
+    ></script>
   </body>
 </html>

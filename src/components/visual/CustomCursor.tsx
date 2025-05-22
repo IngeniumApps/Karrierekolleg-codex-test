@@ -25,7 +25,9 @@ export default function CustomCursor() {
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
-      const interactive = target?.closest('a, button, [role="button"], [data-hover-box]') as HTMLElement | null;
+      const interactive = target?.closest(
+        'a, button, [role="button"], [data-hover-box]',
+      ) as HTMLElement | null;
       const padding = 8;
 
       if (interactive) {
@@ -61,16 +63,16 @@ export default function CustomCursor() {
   }, [x, y, width, height]);
 
   return (
-      <motion.div
-          className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-multiply"
-          style={{
-            x: smoothX,
-            y: smoothY,
-            width: smoothW,
-            height: smoothH,
-            borderRadius: isActive ? 6 : '50%',
-            backgroundColor: isActive ? '#d9e5f1' : 'rgba(44,111,160,0.5)',
-          }}
-      />
+    <motion.div
+      className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-multiply"
+      style={{
+        x: smoothX,
+        y: smoothY,
+        width: smoothW,
+        height: smoothH,
+        borderRadius: isActive ? 6 : '50%',
+        backgroundColor: isActive ? '#d9e5f1' : 'rgba(44,111,160,0.5)',
+      }}
+    />
   );
 }

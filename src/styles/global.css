@@ -1,8 +1,8 @@
 @config "../../tailwind.config.mjs";
 @import './fonts.css';
 @import 'tailwindcss';
-@import "tailwindcss-animated";
-@import "tailwindcss-intersect";
+@import 'tailwindcss-animated';
+@import 'tailwindcss-intersect';
 
 @layer base {
   html {

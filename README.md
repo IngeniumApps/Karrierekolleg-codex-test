@@ -65,7 +65,8 @@ PUBLIC_BASE_URL=https://karrierekolleg.at/
 
 Build for CDX:
 
-### Important TODO: 
+### Important TODO:
+
 When switching to a custom domain (like karrierekolleg.at),  
 change all "/karrierekolleg/..." paths in site.webmanifest back to "/..."
 

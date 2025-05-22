@@ -21,7 +21,11 @@ export default function DesktopNavigation({ scrolled }: { scrolled: boolean }) {
             ? 'text-primary border-b-2 border-primary'
             : 'text-black hover:text-primary hover:border-b-2 hover:border-primary';
         return (
-          <a key={item.id} href={`${import.meta.env.BASE_URL}#${item.id}`} className={`${baseClasses} ${colorClasses}`}>
+          <a
+            key={item.id}
+            href={`${import.meta.env.BASE_URL}#${item.id}`}
+            className={`${baseClasses} ${colorClasses}`}
+          >
             {item.label}
           </a>
         );

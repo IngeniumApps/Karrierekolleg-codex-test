@@ -13,9 +13,9 @@
       "form_factor": "wide"
     },
     {
-        "src": "/karrierekolleg/screenshots/kolleg-mobile.png",
-        "sizes": "720x1280",
-        "type": "image/png"
+      "src": "/karrierekolleg/screenshots/kolleg-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png"
     }
   ],
   "icons": [

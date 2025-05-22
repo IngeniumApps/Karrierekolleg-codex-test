@@ -28,7 +28,7 @@ export default {
         lavendel: '#d7c0db',
         dark_orange: '#f06359',
       },
-    }
+    },
   },
   plugins: [],
 };

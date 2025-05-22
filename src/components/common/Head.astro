@@ -1,16 +1,16 @@
 ---
 interface Props {
-    title?: string;
-    description?: string;
-    url?: string;
-    image?: string;
+  title?: string;
+  description?: string;
+  url?: string;
+  image?: string;
 }
 
 const {
-    title = 'KarriereKolleg – Dein Weg zum Erfolg',
-    description = 'Karriere Kolleg bietet dir die besten Tipps, Kurse und Ressourcen für deine berufliche Entwicklung.',
-    url = 'https://www.karrierekolleg.at',
-    image = 'https://www.karrierekolleg.at/og-image.jpg',
+  title = 'KarriereKolleg – Dein Weg zum Erfolg',
+  description = 'Karriere Kolleg bietet dir die besten Tipps, Kurse und Ressourcen für deine berufliche Entwicklung.',
+  url = 'https://www.karrierekolleg.at',
+  image = 'https://www.karrierekolleg.at/og-image.jpg',
 } = Astro.props;
 ---
 
@@ -37,10 +37,19 @@ const {
 <meta name="twitter:image" content={image} />
 
 <!-- Favicon & App Icons -->
-<link rel="icon" type="image/png" sizes="96x96" href={`${import.meta.env.BASE_URL}favicon-96x96.png`} />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="96x96"
+  href={`${import.meta.env.BASE_URL}favicon-96x96.png`}
+/>
 <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
 <link rel="shortcut icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
-<link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`} />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}
+/>
 <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
 <meta name="apple-mobile-web-app-title" content="Karriere Kolleg" />
 <meta name="theme-color" content="#ffffff" />

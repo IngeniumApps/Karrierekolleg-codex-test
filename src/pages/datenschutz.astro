@@ -3,75 +3,102 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout>
-    <section class="relative w-full min-h-screen lg:pt-36 pt-26 text-base leading-relaxed bg-gradient-to-br flex justify-center px-4 sm:px-6">
-        <!-- 🔮 Gradient-Hintergrund -->
-        <div class="absolute inset-0 z-0" style="background: radial-gradient(ellipse at top right, #1b95cc44, transparent 90%); will-change: transform;"></div>
+  <section
+    class="relative w-full min-h-screen lg:pt-36 pt-26 text-base leading-relaxed bg-gradient-to-br flex justify-center px-4 sm:px-6"
+  >
+    <!-- 🔮 Gradient-Hintergrund -->
+    <div
+      class="absolute inset-0 z-0"
+      style="background: radial-gradient(ellipse at top right, #1b95cc44, transparent 90%); will-change: transform;"
+    >
+    </div>
 
-        <!-- 🧊 Glass-Overlay -->
-        <div class="absolute inset-0 z-0 backdrop-glass"></div>
+    <!-- 🧊 Glass-Overlay -->
+    <div class="absolute inset-0 z-0 backdrop-glass"></div>
 
-        <div class="max-w-3xl z-10 p-8 mt-12 mb-24 rounded-2xl shadow-xl border border-white/30 bg-white/60 backdrop-blur-sm">
-            <h1 class="text-4xl font-headline font-bold text-primary mb-10 text-center">Datenschutzerklärung</h1>
+    <div
+      class="max-w-3xl z-10 p-8 mt-12 mb-24 rounded-2xl shadow-xl border border-white/30 bg-white/60 backdrop-blur-sm"
+    >
+      <h1 class="text-4xl font-headline font-bold text-primary mb-10 text-center">
+        Datenschutzerklärung
+      </h1>
 
-            <div class="space-y-10">
-                <p>
-                    Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).
-                </p>
+      <div class="space-y-10">
+        <p>
+          Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre
+          Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).
+        </p>
 
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Kontakt mit uns</h2>
-                    <p>
-                        Wenn Sie per Formular oder E-Mail Kontakt mit uns aufnehmen, speichern wir Ihre angegebenen Daten zur Bearbeitung der Anfrage und für Anschlussfragen. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Wofür speichern wir Ihre Daten</h2>
-                    <p>
-                        Ingenium Education speichert und verarbeitet Ihre Daten (Name, E-Mail, Telefonnummer, Adresse), um Sie über Ihre Studienmöglichkeiten und Veranstaltungen zu informieren. Weitere Daten zu Aus- und Weiterbildung oder beruflichem Hintergrund dienen zur individuellen Beratung.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Cookies</h2>
-                    <p>
-                        Unsere Website verwendet Cookies, um nutzerfreundlich zu sein. Manche Cookies bleiben gespeichert, bis Sie diese löschen. Wenn Sie keine Cookies möchten, können Sie das in Ihrem Browser einschränken. Die Funktionalität kann dann beeinträchtigt sein.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Web-Analyse</h2>
-                    <p>
-                        Wir nutzen Google Analytics (Google LLC, USA). Es werden Cookies eingesetzt, um die Website-Nutzung zu analysieren. Die Datenverarbeitung basiert auf dem EU-US Privacy Shield sowie berechtigtem Interesse (Art 6 Abs 1 lit f DSGVO). Daten werden pseudonymisiert und 50 Monate gespeichert.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Speicherdauer</h2>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Daten mit Vertragsverhältnis: bis 7 Jahre nach Vertragsende, danach verschlüsselt.</li>
-                        <li>Allgemeine Kontakte: 3 Jahre, danach verschlüsselt.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Ihre Rechte</h2>
-                    <p>
-                        Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf und Widerspruch. Beschwerden richten Sie bitte an die Datenschutzbehörde in Österreich.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4">Datenschutzkontakt</h2>
-                    <p>
-                        Ingenium Education GmbH<br />
-                        Herrengasse 26 – Jungferngasse 1<br />
-                        A-8010 Graz<br />
-                        <strong>Telefon:</strong> +43 316 82 18 18<br />
-                        <strong>E-Mail:</strong> <a href="mailto:datenschutz@ingenium.co.at" class="underline hover:text-accent">datenschutz@ingenium.co.at</a>
-                    </p>
-                </div>
-            </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Kontakt mit uns</h2>
+          <p>
+            Wenn Sie per Formular oder E-Mail Kontakt mit uns aufnehmen, speichern wir Ihre
+            angegebenen Daten zur Bearbeitung der Anfrage und für Anschlussfragen. Diese Daten geben
+            wir nicht ohne Ihre Einwilligung weiter.
+          </p>
         </div>
-    </section>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Wofür speichern wir Ihre Daten</h2>
+          <p>
+            Ingenium Education speichert und verarbeitet Ihre Daten (Name, E-Mail, Telefonnummer,
+            Adresse), um Sie über Ihre Studienmöglichkeiten und Veranstaltungen zu informieren.
+            Weitere Daten zu Aus- und Weiterbildung oder beruflichem Hintergrund dienen zur
+            individuellen Beratung.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Cookies</h2>
+          <p>
+            Unsere Website verwendet Cookies, um nutzerfreundlich zu sein. Manche Cookies bleiben
+            gespeichert, bis Sie diese löschen. Wenn Sie keine Cookies möchten, können Sie das in
+            Ihrem Browser einschränken. Die Funktionalität kann dann beeinträchtigt sein.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Web-Analyse</h2>
+          <p>
+            Wir nutzen Google Analytics (Google LLC, USA). Es werden Cookies eingesetzt, um die
+            Website-Nutzung zu analysieren. Die Datenverarbeitung basiert auf dem EU-US Privacy
+            Shield sowie berechtigtem Interesse (Art 6 Abs 1 lit f DSGVO). Daten werden
+            pseudonymisiert und 50 Monate gespeichert.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Speicherdauer</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              Daten mit Vertragsverhältnis: bis 7 Jahre nach Vertragsende, danach verschlüsselt.
+            </li>
+            <li>Allgemeine Kontakte: 3 Jahre, danach verschlüsselt.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Ihre Rechte</h2>
+          <p>
+            Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerruf und
+            Widerspruch. Beschwerden richten Sie bitte an die Datenschutzbehörde in Österreich.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Datenschutzkontakt</h2>
+          <p>
+            Ingenium Education GmbH<br />
+            Herrengasse 26 – Jungferngasse 1<br />
+            A-8010 Graz<br />
+            <strong>Telefon:</strong> +43 316 82 18 18<br />
+            <strong>E-Mail:</strong>
+            <a href="mailto:datenschutz@ingenium.co.at" class="underline hover:text-accent"
+              >datenschutz@ingenium.co.at</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
