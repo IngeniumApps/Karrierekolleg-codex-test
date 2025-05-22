@@ -1,0 +1,15 @@
+---
+// BenefitsSection.astro
+const { id } = Astro.props;
+---
+
+<section id={id} class="w-full h-dvh flex items-center justify-center bg-white">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Vorteile eines Kollegs</h2>
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="p-6 border rounded shadow-sm bg-white">USP 1</div>
+      <div class="p-6 border rounded shadow-sm bg-white">USP 2</div>
+      <div class="p-6 border rounded shadow-sm bg-white">USP 3</div>
+    </div>
+  </div>
+</section>

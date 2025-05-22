@@ -1,0 +1,121 @@
+---
+// Animationen
+import TypewriterText from '../visual/animation/TypeWriterText';
+import UnderlineBrush from '../visual/animation/UnderlineBrush';
+import HeroChatBubble from "../visual/HeroChatBubbles";
+import {chatEntriesLeft, chatEntriesRight} from "../../constants/chatEntries";
+const { id } = Astro.props;
+---
+
+<section
+    id={id}
+    class="relative w-full min-h-screen grid grid-rows-[1fr_auto] overflow-hidden"
+>
+  <!-- 🔮 Gradient-Hintergrund -->
+  <div class="absolute inset-0 z-0" style="background: radial-gradient(ellipse at top right, #1b95cc44, transparent 90%); will-change: transform;"></div>
+
+  <!-- 🧊 Glass-Overlay -->
+  <div class="absolute inset-0 z-0 backdrop-glass"></div>
+
+  <!-- 🧩 Hauptinhalt (erste Zeile) -->
+  <div class="z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 h-full min-h-0 px-6 lg:pt-36 pt-26 gap-5">
+
+    <!-- 🔠 Linke Spalte: Text + CTA + Cards -->
+    <div class="flex flex-col h-full min-h-0 overflow-hidden justify-center">
+      <div class="lg:text-left self-center text-center">
+        <h1 class="text-[8vw] sm:text-4xl md:text-5xl lg:text-6xl font-headline font-bold mb-8 leading-tight text-gray-900">
+      <span class="inline-block font-black text-[10vw] sm:text-6xl md:text-7xl lg:text-8xl text-primary">
+        <TypewriterText
+            client:idle
+            words={['Karriere', 'Zukunft', 'Bildung']}
+            loop={Infinity}
+            cursorStyle="_"
+        />
+      </span>
+          <br />
+          neu denken.<br />
+          <span class="relative inline-block text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl">
+        <span class="relative z-[1] text-primary">Kolleg</span>
+        <UnderlineBrush
+            className="hidden lg:block absolute left-0 bottom-0 z-0 w-full"
+            fillColor="#BBF451"
+            bottomOffset={5}
+            client:visible
+        />
+      </span>
+          starten.
+        </h1>
+
+        <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Mit einem Kolleg eröffnest du dir neue Wege – praxisnah, berufsbegleitend und staatlich anerkannt.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <!-- 🎯 Gefüllter Button -->
+          <a
+              href={`${import.meta.env.BASE_URL}#vorteile`}
+              class="bg-accent font-bold px-8 py-4 rounded-full shadow-md border-2 border-transparent text-center"
+          >
+            Jetzt informieren
+          </a>
+
+          <!-- 🧭 Outline-Button -->
+          <a
+              href={`${import.meta.env.BASE_URL}#kollegs`}
+              class="inline-block bg-white text-primary font-bold border border-primary px-8 py-4 rounded-full shadow-md"
+          >
+            Alle Kollegs ansehen
+          </a>
+        </div>
+      </div>
+
+      <!--<div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">-->
+      <!--  <div class="bg-[#eaf6fd] rounded-lg p-4 text-center shadow-sm">💻<div class="font-semibold">Tech</div></div>-->
+      <!--  <div class="bg-[#eaf6fd] rounded-lg p-4 text-center shadow-sm">📊<div class="font-semibold">Insight</div></div>-->
+      <!--  <div class="bg-[#eaf6fd] rounded-lg p-4 text-center shadow-sm">💰<div class="font-semibold">Finance</div></div>-->
+      <!--  <div class="bg-[#eaf6fd] rounded-lg p-4 text-center shadow-sm">📄<div class="font-semibold">Legal</div></div>-->
+      <!--</div>-->
+    </div>
+
+    <!-- 👩‍💼 Rechte Spalte: Frau (am unteren Rand) -->
+    <div class="hidden lg:flex relative h-full min-h-0 mb-[-60px]">
+      <!-- 🔵 Kreis-Hintergrund -->
+      <div class="absolute w-[500px] h-[500px] rounded-full bg-[#1b95cc33] z-0 bottom-0"></div>
+      <img
+          src=`${import.meta.env.BASE_URL}images/woman.webp`
+          alt="Frau"
+          class="w-auto h-auto object-cover relative mb-[-60px]"
+          loading="eager"
+      />
+
+      <!-- 💬 Chat-Bubbles-->
+      <!--<HeroChatBubble-->
+      <!--    client:load-->
+      <!--    sender="Daniel Costa"-->
+      <!--    time="11:45"-->
+      <!--    text="Ein Kolleg eröffnet dir neue Wege – berufsbegleitend, praxisnah & anerkannt."-->
+      <!--    position="top-[60%] right-[8%]"-->
+      <!--/>-->
+      <HeroChatBubble
+          client:load
+          position="top-[50%] left-0"
+          delayOffset={0}
+          entries={chatEntriesLeft}
+      />
+
+      <HeroChatBubble
+          client:load
+          position="bottom-0 right-0"
+          delayOffset={1500}
+          entries={chatEntriesRight}
+      />
+    </div>
+  </div>
+
+  <!-- 🧭 Scroll-Indikator (zweite Zeile) -->
+  <div class="relative z-10 flex items-center justify-center h-[60px]">
+    <div class="text-gray-500 text-sm animate-bounce pointer-events-none">
+      ↓ Scroll weiter
+    </div>
+  </div>
+</section>

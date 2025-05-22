@@ -1,0 +1,76 @@
+---
+import { colleges } from '../../constants/colleges';
+import CollegeCard from '../CollegeCard';
+const { id } = Astro.props;
+
+// Themengruppen
+const groupedColleges = {
+  "Technik & Informatik": colleges.filter(
+      (c) => c.topic === "Technik" || c.topic === "Informatik"
+  ),
+  "Design": colleges.filter((c) => c.topic === "Design"),
+  "Bau & Architektur": colleges.filter((c) => c.topic === "Bau & Architektur"),
+  "Naturwissenschaft": colleges.filter((c) => c.topic === "Naturwissenschaft"),
+};
+
+type Topic = "Technik & Informatik" | "Design" | "Bau & Architektur" | "Naturwissenschaft";
+
+const topicColors: Record<Topic, string> = {
+  "Technik & Informatik": "primary",
+  "Design": "pink",
+  "Bau & Architektur": "orange",
+  "Naturwissenschaft": "red",
+};
+---
+
+<section id={id} class="relative py-32 px-6 overflow-hidden">
+  <!-- 🔮 Radialer Farbverlauf -->
+  <div class="absolute inset-0 z-0" style="background: radial-gradient(ellipse at top right, #1b95cc44, transparent 90%); will-change: transform;"></div>
+
+  <!-- 🧊 Glass-Overlay -->
+  <div class="absolute inset-0 z-0 backdrop-glass"></div>
+
+  <!-- 🔲 Inhalt -->
+  <div class="relative z-10 max-w-screen-xl mx-auto text-center">
+    <h2 class="text-4xl sm:text-5xl font-headline font-bold text-primary mb-4">
+      Kollegs entdecken
+    </h2>
+    <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+      In ganz Österreich findest du Kollegs für Technik, Design und mehr – entdecke, was zu dir passt.
+    </p>
+
+    <!-- 📚 Thematisch gegliederte Sections -->
+    {
+      Object.entries(groupedColleges)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([topic, list]) => (
+          <div class="text-left mb-28" id={topic.toLowerCase().replace(/ /g, '-')}>
+            <!-- 🏷 Überschrift -->
+            <h3 class={`text-3xl font-bold mb-2 text-${topicColors[topic as Topic] ?? 'text-primary'}`}>
+              {topic}
+            </h3>
+
+            <!-- 📝 Einleitung -->
+            <p class="text-gray-600 mb-10 max-w-3xl">
+              {
+                topic === 'Technik & Informatik' ? 'Praktisch, zukunftsorientiert und gefragt – Technik- und Informatik-Kollegs bereiten dich optimal auf Industrie, IT und Digitalisierung vor.'
+                    : topic === 'Design' ? 'Gestalten, entwerfen, kreativ denken – Kollegs im Design-Bereich fördern deine gestalterische Stärke.'
+                        : topic === 'Bau & Architektur' ? 'Du willst Räume planen, Bauwerke entwerfen und mit Technik verbinden? Diese Kollegs bieten dir eine solide Grundlage.'
+                            : topic === 'Naturwissenschaft' ? 'Wenn du experimentierst, analysierst und forschst – entdecke naturwissenschaftliche Kollegs.'
+                                : 'Diese Kollegs könnten dich ebenfalls interessieren.'
+              }
+            </p>
+
+            <!-- 💠 Grid der Cards -->
+            <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+              {
+                list.map((colleg) => (
+                    <CollegeCard client:load {...colleg} />
+                ))
+              }
+            </div>
+          </div>
+      ))
+    }
+  </div>
+</section>
