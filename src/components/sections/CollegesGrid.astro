@@ -47,14 +47,14 @@ const topicColors: Record<Topic, string> = {
       Object.entries(groupedColleges)
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([topic, list]) => (
-          <div class="text-left mb-28" id={topic.toLowerCase().replace(/ /g, '-')}>
+          <div class="text-left mb-32" id={topic.toLowerCase().replace(/ /g, '-')}>
             <h3
-              class={`text-3xl font-bold mb-2 text-${topicColors[topic as Topic] ?? 'text-primary'}`}
+              class={`text-3xl font-bold mb-4 text-${topicColors[topic as Topic] ?? 'text-primary'}`}
             >
               {topic}
             </h3>
 
-            <p class="text-gray-600 mb-10 max-w-3xl">
+            <p class="text-gray-600 mb-8 max-w-3xl">
               {topic === 'Technik & Informatik'
                 ? 'Praktisch, zukunftsorientiert und gefragt – Technik- und Informatik-Kollegs bereiten dich optimal auf Industrie, IT und Digitalisierung vor.'
                 : topic === 'Design'
@@ -66,9 +66,9 @@ const topicColors: Record<Topic, string> = {
                       : 'Diese Kollegs könnten dich ebenfalls interessieren.'}
             </p>
 
-            <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-primary/40">
               {list.map((colleg) => (
-                <CollegeCard client:load {...colleg} />
+                <CollegeCard client:visible {...colleg} />
               ))}
             </div>
           </div>
