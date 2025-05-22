@@ -15,11 +15,11 @@ export function useScrollSpy(ids: string[], offset = 0) {
       });
 
       const currentId = visibleSections.filter(Boolean).slice(-1)[0] || null;
-      if (currentId && currentId !== activeId) {
+      if (currentId !== activeId) {
         setActiveId(currentId);
 
         // 💡 Hash in URL aktualisieren ohne Seitenwechsel
-        if (window.location.hash !== `#${currentId}`) {
+        if (currentId && window.location.hash !== `#${currentId}`) {
           history.replaceState(null, '', `#${currentId}`);
         }
       }
@@ -28,7 +28,7 @@ export function useScrollSpy(ids: string[], offset = 0) {
     handleScroll(); // Initial check
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [ids, offset, activeId]);
+  }, [ids, offset]);
 
   return activeId;
 }
