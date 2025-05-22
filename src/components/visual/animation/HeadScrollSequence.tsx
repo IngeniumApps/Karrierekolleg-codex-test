@@ -1,4 +1,4 @@
-// src/components/visual/animation/HeroScrollSequence.tsx
+// src/components/visual/animation/HeadScrollSequence.tsx
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -8,7 +8,7 @@ const frameCount = 120;
 const imagePath = (index: number) =>
   `/images/hero-sequence/frame_${String(index).padStart(4, '0')}.jpg`;
 
-export default function HeroScrollSequence() {
+export default function HeadScrollSequence() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
