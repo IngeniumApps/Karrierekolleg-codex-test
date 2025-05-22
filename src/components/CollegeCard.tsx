@@ -16,31 +16,36 @@ export default function CollegeCard({ name, topic, school, link, color, image }:
   return (
     <motion.a
       href={link}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.3 }} // 👈 wichtig!
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="group block max-w-xl mx-auto overflow-hidden transition-transform duration-300 hover:scale-[1.02] ring-primary/30"
+      className="group relative block w-72 shrink-0 snap-center"
       aria-label={`Mehr erfahren über ${name} an der ${school}`}
     >
       <img
         src={image}
         alt={`Symbolbild für ${topic}`}
-        className="w-full h-48 object-cover"
+        className="w-full h-52 object-cover rounded-2xl shadow-lg"
         loading="lazy"
       />
 
-      <div className="relative -mt-12 mx-6 bg-white p-6 z-10 h-full">
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
         <span
           className={clsx(
-            'inline-block mb-2 text-xs font-semibold text-white px-3 py-1 rounded-full',
+            'inline-block mb-1 text-xs font-semibold text-white px-3 py-1 rounded-full',
             color,
           )}
         >
           {topic}
         </span>
-        <h3 className="text-lg sm:text-xl font-bold mb-1">{name}</h3>
-        <p className="text-sm">{school}</p>
+        <h3 className="text-lg font-bold leading-snug">{name}</h3>
+        <p className="text-sm opacity-90">{school}</p>
       </div>
     </motion.a>
   );
