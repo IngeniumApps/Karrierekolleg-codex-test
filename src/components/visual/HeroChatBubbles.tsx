@@ -24,13 +24,17 @@ export default function HeroChatBubble({
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    let interval: number | undefined;
     const timeout = setTimeout(() => {
-      const interval = setInterval(() => {
+      interval = window.setInterval(() => {
         setIndex((prev) => (prev + 1) % entries.length);
       }, 8000);
-      return () => clearInterval(interval);
     }, delayOffset);
-    return () => clearTimeout(timeout);
+
+    return () => {
+      clearTimeout(timeout);
+      if (interval !== undefined) clearInterval(interval);
+    };
   }, [entries.length, delayOffset]);
 
   const current = entries[index];
